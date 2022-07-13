@@ -10,6 +10,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$emit('loading-animation'), 3500)
       setTimeout(() => this.$nuxt.$loading.finish(), 4000)
     })
   }

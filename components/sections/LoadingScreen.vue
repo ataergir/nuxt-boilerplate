@@ -4,10 +4,14 @@
   </div>
 </template>
 <script>
+  import { gsap } from "gsap";
   export default {
     data: () => ({
       loading: false,
     }),
+    created() {
+      this.$nuxt.$on('loading-animation', () => gsap.to('.loading-page', {opacity:0, duration:0.5, ease: 'power4.easeOut'}))
+    },
     methods: {
       start() {
         this.loading = true
